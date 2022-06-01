@@ -17,7 +17,7 @@ export class ShortenersController {
     @Get('shorten')
     async shortenURL(@Query('url') originalUrl) {
         
-        const baseUrl = this.configService.get<String>('baseUrl');
+        const baseUrl = this.configService.get<String>('base_url');
 
         if (!isURL(originalUrl)) {
             throw new HttpException('Bad Request', HttpStatus.BAD_REQUEST)
