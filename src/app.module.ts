@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { BooksModule } from './books/books.module';
 import { ShortenersModule } from './shorteners/shorteners.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from 'config/configuration';
 
 
@@ -13,7 +13,13 @@ import configuration from 'config/configuration';
     ConfigModule.forRoot({
       load: [configuration],
     }),
-      MongooseModule.forRoot(configuration().database.mongodb_uri), 
+      MongooseModule.forRootAsync({
+        imports: [ConfigModule],
+        useFactory: async (configService: ConfigService) => ({
+          uri: configService.get<string>('database.database_uri'),
+        }),
+        inject: [ConfigService]
+      }), 
       BooksModule, 
       ShortenersModule
     ],
