@@ -27,6 +27,7 @@
     "@nestjs/mongoose": "^9.1.0",
     "@nestjs/platform-express": "^8.0.0",
     "class-validator": "^0.13.2",
+    "compare-urls": "^3.0.0",
     "mongoose": "^6.3.5",
     "nanoid": "^3.3.4",
     "reflect-metadata": "^0.1.13",

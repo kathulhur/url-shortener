@@ -6,7 +6,7 @@ import { ShortenersModule } from './shorteners/shorteners.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from 'config/configuration';
-
+import { ShortUrl, ShortUrlSchema } from './shorteners/schemas/shorturl.schema';
 
 @Module({
   imports: [
@@ -20,6 +20,7 @@ import configuration from 'config/configuration';
         }),
         inject: [ConfigService]
       }), 
+      MongooseModule.forFeature([{ name: ShortUrl.name, schema: ShortUrlSchema }]),
       BooksModule, 
       ShortenersModule
     ],

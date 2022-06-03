@@ -1,12 +1,17 @@
 import { Controller, Get, HttpException, HttpStatus, Param, Query } from '@nestjs/common';
 import { ShortenersService } from './shorteners.service';
-import { isURL } from 'class-validator';
+import { IsUrl, isURL } from 'class-validator';
 import { nanoid } from 'nanoid';
 import { ConfigService } from '@nestjs/config';
+import { CreateShortUrlDto } from './dto/CreateShortUrl.dto';
+import compareUrls from 'compare-urls';
 
 @Controller('shorteners')
 export class ShortenersController {
-    constructor (private shortenersService: ShortenersService, private configService: ConfigService) {}
+    constructor (
+        private shortenersService: ShortenersService, 
+        private configService: ConfigService
+        ) {}
 
     @Get('')
     async getShorteners() {
@@ -31,14 +36,10 @@ export class ShortenersController {
                 } else {
                     const code = nanoid(8);
                     const shortUrl = baseUrl + '/' + code;
+                    
+                    const shortUrlDto = new CreateShortUrlDto(code, originalUrl, shortUrl, Date.now());
 
-                    const result = {
-                        status: 'Success',
-                        originalURL:  originalUrl,
-                        shortenedURL: shortUrl
-                    }
-
-                    return result
+                    return await this.shortenersService.create(shortUrlDto);
                     // TODO: save the data here 
                 }
 
