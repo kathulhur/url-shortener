@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BooksModule } from './books/books.module';
-import { ShortenersModule } from './shorteners/shorteners.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from 'config/configuration';
-import { ShortUrl, ShortUrlSchema } from './shorteners/schemas/shorturl.schema';
+import { ShortUrlSchema, ShortUrl } from './schemas/shorturl.schema';
 
 @Module({
   imports: [
@@ -21,8 +19,6 @@ import { ShortUrl, ShortUrlSchema } from './shorteners/schemas/shorturl.schema';
         inject: [ConfigService]
       }), 
       MongooseModule.forFeature([{ name: ShortUrl.name, schema: ShortUrlSchema }]),
-      BooksModule, 
-      ShortenersModule
     ],
   controllers: [AppController],
   providers: [AppService],
