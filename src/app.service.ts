@@ -3,7 +3,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ShortUrl, ShortUrlDocument } from './schemas/shorturl.schema';
 import { ConfigService } from '@nestjs/config';
-import { CreateShortUrlDto } from './dto/CreateShortUrl.dto';
+import { ICreateShortUrl } from './dto/ICreateShortUrl.dto';
+import { IApiResponse } from './dto/IApiResponse.dto';
 
 @Injectable()
 export class AppService {
@@ -20,8 +21,21 @@ export class AppService {
     return this.shortUrlModel.findOne({urlCode}).exec();
   } 
 
+  createApiResponseSuccess(storedData: ShortUrl) {
+    const apiResponse: IApiResponse = {
+      apiVersion: process.env.API_VERSION, 
+      data : {
+        urlCode: storedData.urlCode,
+        longUrl: storedData.longUrl,
+        shortUrl: storedData.shortUrl,
+        date: storedData.date,
+      }
+    }
+    return apiResponse;
+  }
 
-  async create(createShortUrlDto: CreateShortUrlDto): Promise<ShortUrl> {
+
+  async create(createShortUrlDto: ICreateShortUrl): Promise<ShortUrl> {
     const createdShortUrl = new this.shortUrlModel(createShortUrlDto);
     return createdShortUrl.save();
   }

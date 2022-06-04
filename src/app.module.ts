@@ -14,7 +14,7 @@ import { ShortUrlSchema, ShortUrl } from './schemas/shorturl.schema';
       MongooseModule.forRootAsync({
         imports: [ConfigModule],
         useFactory: async (configService: ConfigService) => ({
-          uri: configService.get<string>('database.database_uri'),
+          uri: configService.get<string>('database.databaseUri'),
         }),
         inject: [ConfigService]
       }), 

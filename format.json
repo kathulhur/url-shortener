@@ -1,0 +1,12 @@
+{
+    "apiVersion" : "number",
+    "data" : {
+        "urlCode" : "string",
+        "longUrl" : "string",
+        "shortUrl" : "string",
+        "date" : "string"
+    },
+    "error" : {
+        "message" : "string"
+    }
+}
