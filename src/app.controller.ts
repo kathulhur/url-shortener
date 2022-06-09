@@ -23,7 +23,10 @@ export class AppController {
         
         const baseUrl = this.configService.get<String>('baseUrl');
 
-        if (isURL(originalUrl)) {
+        if (isURL(originalUrl)) {// check whether originalUrl is a valid url
+          if(!isURL(originalUrl, { require_protocol: true })) {// add protocol portion of the url if originalUrl doesn't contains such
+            originalUrl = "https://" + originalUrl;
+          }
             try {
                 const storedData: ShortUrl = await this.appService.findLongUrl(originalUrl);
                 if (storedData) {
