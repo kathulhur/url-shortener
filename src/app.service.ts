@@ -17,7 +17,7 @@ export class AppService {
   }
 
 
-  async getUrlCode(urlCode: string): Promise<any> {
+  async getByUrlCode(urlCode: string): Promise<any> {
     return this.shortUrlModel.findOne({urlCode}).exec();
   } 
 

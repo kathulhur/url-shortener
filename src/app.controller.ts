@@ -5,6 +5,7 @@ import { isURL } from 'class-validator';
 import { ConfigService } from '@nestjs/config';
 import { ICreateShortUrl } from './dto/ICreateShortUrl.dto';
 import { ShortUrl } from './schemas/shorturl.schema';
+import { get } from 'http';
 
 @Controller()
 export class AppController {
@@ -46,11 +47,28 @@ export class AppController {
         } 
     }
 
+  @Get("info")
+  async getInfo(@Query('code') urlCode: string) {
+    /* Return the information containing the urlCode from the database */
+    try {
+      const storedShortUrl = await this.appService.getByUrlCode(urlCode);
+      if (storedShortUrl) {// data found
+        return this.appService.createApiResponseSuccess(storedShortUrl);
+      } else {// no data found with the urlCode
+        throw new HttpException('Bad Request', HttpStatus.BAD_REQUEST)
+      }
+    } catch (error) {// error has occured
+      console.log(error)
+      throw new HttpException("Server Error", HttpStatus.INTERNAL_SERVER_ERROR)
+    }
+
+  }
+
   @Get(":urlCode")
   async redirect(@Res() res, @Param('urlCode') urlCode: string) {
     // BUG: redirect doesn't work if there is no protocol part of the url
     try {
-      const shortUrl = await this.appService.getUrlCode(urlCode);
+      const shortUrl = await this.appService.getByUrlCode(urlCode);
       if (shortUrl) {
         res.redirect(shortUrl.longUrl);
       }
