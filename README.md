@@ -1,30 +1,105 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+### Built With
+
+* [Nest.js](https://nestjs.com/)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Description
+A url shortener API
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## API Base
+https://short-url-webapp.herokuapp.com/
+
+
+## Shortening a link
+```
+/shorten
+```
+
+## Example
+```
+GET/POST: https://short-url-webapp.herokuapp.com/shorten?url=www.google.com
+```
+
+Response
+```json
+{
+  "apiVersion":"0.0.1",
+  "data":{
+    "urlCode":"dQJken_i",
+    "longUrl":"https://www.google.com",
+    "shortUrl":"https://short-url-webapp.herokuapp.com/dQJken_i",
+    "date":"2022-06-21T14:54:28.525Z"
+  }
+}
+```
+
+## Getting information on a link
+```
+/info
+```
+This gets the information about the link. This requires a 'code' query parameter having the short url code.
+Example: https://short-url-webapp.herokuapp.com/thisisacode &rarr; Code: `thisisacode`
+
+
+## Example
+```
+GET/POST: https://short-url-webapp.herokuapp.com/info?code=www.google.com
+```
+
+Response
+```json
+{
+  "apiVersion":"0.0.1",
+  "data":{
+    "urlCode":"dQJken_i",
+    "longUrl":"https://www.google.com",
+    "shortUrl":"https://short-url-webapp.herokuapp.com/dQJken_i",
+    "date":"2022-06-21T14:54:28.525Z"
+  }
+}
+```
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Custom error response
+- [ ] Home Page
+- [ ] Custom Domain
+
+See the [open issues](https://github.com/kathulhur/url-shortener/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+# Setting up locally
+
 
 ## Installation
 
@@ -58,16 +133,41 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Joseph](https://kathulhur.github.io/portfolio/)
+- Website - [https://kathulhur.github.io/portfolio/](https://kathulhur.github.io/portfolio/)
+- Twitter - [@kathulhu_dev](https://twitter.com/kathulhu_dev)
 
+<!-- LICENSE -->
 ## License
 
-Nest is [MIT licensed](LICENSE).
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+Joseph - [@kathulhu_dev](https://twitter.com/kathulhu_dev) - josephkarl19@gmail.com
+
+Project Link: [https://github.com/kathulhur/url-shortener](https://github.com/kathulhur/url-shortener)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+[contributors-shield]: https://img.shields.io/github/contributors/kathulhur/url-shortener.svg?style=for-the-badge
+[contributors-url]: https://github.com/kathulhur/url-shortener/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/kathulhur/url-shortener.svg?style=for-the-badge
+[forks-url]: https://github.com/kathulhur/url-shortener/network/members
+[stars-shield]: https://img.shields.io/github/stars/kathulhur/url-shortener.svg?style=for-the-badge
+[stars-url]: https://github.com/kathulhur/url-shortener/stargazers
+[issues-shield]: https://img.shields.io/github/issues/kathulhur/url-shortener.svg?style=for-the-badge
+[issues-url]: https://github.com/kathulhur/url-shortener/issues
+[license-shield]: https://img.shields.io/github/license/kathulhur/url-shortener.svg?style=for-the-badge
+[license-url]: https://github.com/kathulhur/url-shortener/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: images/screenshot.png
+

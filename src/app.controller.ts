@@ -64,6 +64,8 @@ export class AppController {
 
   }
 
+  
+
   @Get(":urlCode")
   async redirect(@Res() res, @Param('urlCode') urlCode: string) {
     // BUG: redirect doesn't work if there is no protocol part of the url
