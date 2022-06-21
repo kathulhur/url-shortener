@@ -43,7 +43,7 @@ https://short-url-webapp.herokuapp.com/
 /shorten
 ```
 
-## Example
+### Example
 ```
 GET/POST: https://short-url-webapp.herokuapp.com/shorten?url=www.google.com
 ```
@@ -69,7 +69,7 @@ This gets the information about the link. This requires a 'code' query parameter
 Example: https://short-url-webapp.herokuapp.com/thisisacode &rarr; Code: `thisisacode`
 
 
-## Example
+### Example
 ```
 GET/POST: https://short-url-webapp.herokuapp.com/info?code=www.google.com
 ```
