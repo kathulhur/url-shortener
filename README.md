@@ -34,6 +34,9 @@
 ## Description
 A url shortener API
 
+https://ikzi.ml make use of this API. Developed by my web developer friend, [goriio](https://github.com/goriio).
+
+
 ## API Base
 https://short-url-webapp.herokuapp.com/
 
