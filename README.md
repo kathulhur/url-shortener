@@ -139,7 +139,7 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Joseph](https://kathulhur.github.io/portfolio/)
+- Author - [Joseph](https://github.com/kathulhur)
 - Website - [https://kathulhur.github.io/portfolio/](https://kathulhur.github.io/portfolio/)
 - Twitter - [@kathulhu_dev](https://twitter.com/kathulhu_dev)
 
@@ -154,7 +154,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Joseph - [@kathulhu_dev](https://twitter.com/kathulhu_dev) - josephkarl19@gmail.com
+Joseph - josephkarl19@gmail.com
 
 Project Link: [https://github.com/kathulhur/url-shortener](https://github.com/kathulhur/url-shortener)
 
