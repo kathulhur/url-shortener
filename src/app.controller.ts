@@ -14,9 +14,9 @@ export class AppController {
     private readonly configService: ConfigService,
     ) {}
 
-  @Get()
+  // @Get()
   getHello(): string {
-    return this.appService.getHello();
+    return 'hellow world';
   }
 
   @Get('shorten')
