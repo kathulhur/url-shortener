@@ -3,9 +3,131 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Shorten URL API Documentation</h1>
+
+    <main class="main-container">
+        <div class="main-content">
+            <h1>URL Shortener API Documentation</h1>
+            
+
+            <br/>
+            <br/>
+
+
+            <h2>Description</h2>
+            <p>A URL shortener API containing functionality such as shortening URL and retrieving URL information given the code</p>
+            <p><a href="https://ikzi.ml">ikzi.ml</a> make use of this API. Developed by my web developer friend, <a href="https:github.com/goriio">goriio</a></p>
+    
+
+            <br/>
+            <br/>
+    
+
+            <h2>API Base</h2>
+            <a href="https://short-url-webapp.herokuapp.com/">https://short-url-webapp.herokuapp.com/</a>
+    
+
+            <br/>
+            <br/>
+
+
+            <h2>Shortening a link</h2>
+            <div class="content-box">
+                <p>/shorten</p>
+            </div>
+            
+
+            <br/>
+            <br/>
+
+
+            <h3>Example</h3>
+            <div class="content-box">
+                <p>GET/POST: https://short-url-webapp.herokuapp.com/shorten?url=www.google.com</p>
+            </div>
+    
+
+            <br/>
+            <br/>
+
+
+            <h4>Response Object</h4>
+            <div class="content-box">
+                <pre>
+{
+    {
+    "apiVersion":"0.0.1",
+    "data":{
+    "urlCode":"dQJken_i",
+    "longUrl":"https://www.google.com",
+    "shortUrl":"https://short-url-webapp.herokuapp.com/dQJken_i",
+    "date":"2022-06-21T14:54:28.525Z"
+    }
+}
+                </pre>
+            </div>
+    
+
+            <br/>
+            <br/>
+
+
+            <h2>Getting information on a link</h2>
+            <div class="content-box">
+                <p>/info</p>
+            </div>
+            <div class="small-text">
+                <p>This gets the information about the link. This requires a 'code' query parameter having the short url code. Example: https://short-url-webapp.herokuapp.com/c0d3 --> Code: c0d3</p>
+            </div>
+    
+
+            <br/>
+            <br/>
+
+
+            <h3>Example</h3>
+            <div class="content-box">
+                <p>GET/POST: https://short-url-webapp.herokuapp.com/info?code=c0d3</p>
+            </div>
+    
+            
+            <br/>
+            <br/>
+
+
+            <h4>Response Object</h4>
+            <div class="content-box">
+                <pre>
+{
+    {
+    "apiVersion":"0.0.1",
+    "data":{
+    "urlCode":"dQJken_i",
+    "longUrl":"https://www.google.com",
+    "shortUrl":"https://short-url-webapp.herokuapp.com/dQJken_i",
+    "date":"2022-06-21T14:54:28.525Z"
+    }
+}
+                </pre>
+            </div>
+
+            <br/>
+            <br/>
+
+
+            <div class="contact-container">
+                <h4>Contact</h4>
+                <p><a href="https://kathulhur.github.io/">kathulhu</a></p>
+            </div>
+
+        </div>
+    
+    </main>
+    
+
+
 </body>
 </html>
