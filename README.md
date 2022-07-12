@@ -34,6 +34,9 @@
 ## Description
 A url shortener API
 
+https://ikzi.ml make use of this API. Developed by my web developer friend, [goriio](https://github.com/goriio).
+
+
 ## API Base
 https://short-url-webapp.herokuapp.com/
 
@@ -136,7 +139,7 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Joseph](https://kathulhur.github.io/portfolio/)
+- Author - [Joseph](https://github.com/kathulhur)
 - Website - [https://kathulhur.github.io/portfolio/](https://kathulhur.github.io/portfolio/)
 - Twitter - [@kathulhu_dev](https://twitter.com/kathulhu_dev)
 
@@ -151,7 +154,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Joseph - [@kathulhu_dev](https://twitter.com/kathulhu_dev) - josephkarl19@gmail.com
+Joseph - josephkarl19@gmail.com
 
 Project Link: [https://github.com/kathulhur/url-shortener](https://github.com/kathulhur/url-shortener)
 
@@ -168,6 +171,6 @@ Project Link: [https://github.com/kathulhur/url-shortener](https://github.com/ka
 [license-shield]: https://img.shields.io/github/license/kathulhur/url-shortener.svg?style=for-the-badge
 [license-url]: https://github.com/kathulhur/url-shortener/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/joseph-karl-crisostomo-aa009021b
 [product-screenshot]: images/screenshot.png
 
